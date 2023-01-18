@@ -18,6 +18,7 @@ public class CalculatorFragment extends AppCompatActivity {
     TextView results;
     TextView enteredValues;
     String entered = "";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +34,10 @@ public class CalculatorFragment extends AppCompatActivity {
     public void evaluateOnClick(View view) {
         double result = 0;
         ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
-        try{
-            result = (double)engine.eval(entered);
-        }catch(Exception e){
-            Toast.makeText(this,"Invalid Input",Toast.LENGTH_SHORT).show();
+        try {
+            result = (double) engine.eval(entered);
+        } catch (Exception e) {
+            Toast.makeText(this, "Invalid Input", Toast.LENGTH_SHORT).show();
         }
         results.setText(String.valueOf(result));
     }
@@ -48,7 +49,7 @@ public class CalculatorFragment extends AppCompatActivity {
 
     public void clearOnClick(View view) {
         enteredValues.setText("");
-        entered="";
+        entered = "";
         results.setText("");
     }
 
@@ -57,10 +58,18 @@ public class CalculatorFragment extends AppCompatActivity {
     }
 
     public void plusMinusOnClick(View view) {
-
+        double result = 0;
+        String number = enteredValues.getText().toString();
+        number = number + "*-1";
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
+        try {
+            result = (double) engine.eval(number);
+        } catch (Exception e) {
+            Toast.makeText(this, "Invalid Input", Toast.LENGTH_SHORT).show();
+        }
+        entered = "";
+        setEnteredValues(String.valueOf(result));
     }
-
-
 
     public void multiplyOnClick(View view) {
         setEnteredValues("*");
@@ -87,6 +96,17 @@ public class CalculatorFragment extends AppCompatActivity {
     }
 
     public void percentageOnClick(View view) {
+        double result = 0;
+        String number = enteredValues.getText().toString();
+        number = number + "*0.01";
+        ScriptEngine engine = new ScriptEngineManager().getEngineByName("rhino");
+        try {
+            result = (double) engine.eval(number);
+        } catch (Exception e) {
+            Toast.makeText(this, "Invalid Input", Toast.LENGTH_SHORT).show();
+        }
+        entered = "";
+        setEnteredValues(String.valueOf(result));
     }
 
     public void twoOnClick(View view) {
