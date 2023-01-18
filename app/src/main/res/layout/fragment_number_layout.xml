@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".CalculatorFragment">
 
     <Button
         android:id="@+id/button22"
@@ -11,11 +12,12 @@
         android:layout_height="65dp"
         android:layout_marginTop="115dp"
         android:text="/"
+        android:onClick="divideOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button21"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/result"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
@@ -24,11 +26,12 @@
         android:layout_height="65dp"
         android:layout_marginTop="115dp"
         android:text="AC"
+        android:onClick="clearOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toStartOf="@+id/button20"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/result"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
@@ -36,6 +39,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="5"
+        android:onClick="fiveOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button12"
         app:layout_constraintEnd_toStartOf="@+id/button9"
         app:layout_constraintHorizontal_bias="0.5"
@@ -49,11 +53,12 @@
         android:layout_height="65dp"
         android:layout_marginTop="115dp"
         android:text="+/-"
+        android:onClick="plusMinusOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toStartOf="@+id/button21"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button19"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/result"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
@@ -61,6 +66,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="6"
+        android:onClick="sixOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button14"
         app:layout_constraintEnd_toStartOf="@+id/button10"
         app:layout_constraintHorizontal_bias="0.5"
@@ -73,6 +79,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="."
+        android:onClick="decimalOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button18"
         app:layout_constraintHorizontal_bias="0.5"
@@ -85,6 +92,7 @@
         android:layout_width="154dp"
         android:layout_height="62dp"
         android:text="0"
+        android:onClick="zeroOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button15"
         app:layout_constraintHorizontal_bias="0.5"
@@ -97,6 +105,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="7"
+        android:onClick="sevenOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintEnd_toStartOf="@+id/button5"
         app:layout_constraintHorizontal_bias="0.5"
@@ -109,6 +118,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="8"
+        android:onClick="eightOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button8"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.5"
@@ -121,6 +131,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="9"
+        android:onClick="nineOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button9"
         app:layout_constraintEnd_toStartOf="@+id/button6"
         app:layout_constraintHorizontal_bias="0.5"
@@ -134,11 +145,12 @@
         android:layout_height="65dp"
         android:layout_marginTop="115dp"
         android:text="%"
+        android:onClick="percentageOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toStartOf="@+id/button22"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button20"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/result"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
@@ -146,6 +158,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="2"
+        android:onClick="twoOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button17"
         app:layout_constraintEnd_toStartOf="@+id/button14"
         app:layout_constraintHorizontal_bias="0.5"
@@ -158,6 +171,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="="
+        android:onClick="evaluateOnClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -170,6 +184,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="+"
+        android:onClick="addOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -182,6 +197,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="1"
+        android:onClick="oneOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button17"
         app:layout_constraintEnd_toStartOf="@+id/button12"
         app:layout_constraintHorizontal_bias="0.5"
@@ -194,6 +210,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="X"
+        android:onClick="multiplyOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -206,6 +223,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="4"
+        android:onClick="fourOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button11"
         app:layout_constraintEnd_toStartOf="@+id/button8"
         app:layout_constraintHorizontal_bias="0.5"
@@ -218,6 +236,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="-"
+        android:onClick="subtractOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -230,6 +249,7 @@
         android:layout_width="66dp"
         android:layout_height="65dp"
         android:text="3"
+        android:onClick="threeOnClick"
         app:layout_constraintBottom_toTopOf="@+id/button15"
         app:layout_constraintEnd_toStartOf="@+id/button16"
         app:layout_constraintHorizontal_bias="0.5"
@@ -237,17 +257,31 @@
         app:layout_constraintTop_toBottomOf="@+id/button9"
         app:layout_constraintVertical_bias="0.5" />
 
-    <EditText
-        android:id="@+id/editTextNumber"
-        android:layout_width="361dp"
-        android:layout_height="214dp"
-        android:ems="10"
-        android:inputType="number"
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="397dp"
+        android:layout_height="82dp"
+        android:text="Calculator Numbers"
+        android:textSize="30sp"
+        android:gravity="center_vertical"
+        android:textAlignment="textEnd"
         app:layout_constraintBottom_toTopOf="@+id/button22"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="393dp"
+        android:layout_height="64dp"
+        android:gravity="center_vertical"
+        android:text="Calculator Results"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/button20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
